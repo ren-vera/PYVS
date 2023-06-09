@@ -28,6 +28,8 @@ print(listad)
 listae = ["a", "b", "c", "d", "f"]
 listae.pop(3)#borra un elemento segun la cordenada
 print(listae)
+listae = listad.pop() #recogerá el ultimo valor de la lista (listad)
+print(listae)
 
 listaf = [1, 2, 3]
 listaf.reverse()#da vuelta la lista
