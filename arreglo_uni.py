@@ -40,7 +40,7 @@ arr = np.array(lista)
 print(arr)  # Output: [1 2 3 4 5]
 
 #Crear un array a partir de una tupla:
-tupla = (1, 2, 3, 4, 5)
+tupla = (1, 2, 3, 4, 5) #UNA TUPLA ES SIMILAR A UNA LISTA PERO SU FORMATO ES CON () Y NO ES MODIFICABLE Y SE USAN PARA ALMACENAR UN TIPO DE ELEMENTO
 arrr = np.array(tupla)
 print(arrr)  # Output: [1 2 3 4 5]
 
