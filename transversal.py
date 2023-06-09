@@ -18,14 +18,18 @@ while  menu_principal :
             marca_car = input("\nMARCA DEL VEHICULO: ")
             valor_car = int(input("\nPRECIO DEL VEHICULO: $"))
             consulta = input("\n¿El vehiculo tiene multas?: ")
+        
             if consulta == "SI" or consulta =="si":
                 multa_car = int(input("\nIngrese el monto de la multa: $"))
-                fecha_multa_car = input("\nFecha de la multa: ")
+                fecha_multa_car = input("\nFecha de la multa (si/no): ")
+        
             elif consulta == "NO" or consulta =="no":
                 print("")
+        
             fecha_registro_car = input("\nFecha del registro del vehiculo: ")
             dueño_car = input("\nDueño del vehiculo: ")  
             menu_principal = False     
+        
         elif opcion == 2 :
             print("\n Ha seleccionado la opción: Buscar")
             break           
