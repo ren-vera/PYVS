@@ -1,0 +1,7 @@
+{
+    "diffEditor.codeLens": true,
+    "editor.fontSize": 15,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "line"
+}

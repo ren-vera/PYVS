@@ -28,7 +28,7 @@ print(listad)
 listae = ["a", "b", "c", "d", "f"]
 listae.pop(3)#borra un elemento segun la cordenada
 print(listae)
-listae = listad.pop() #recogerá el ultimo valor de la lista (listad)
+listae = listab.pop() #recogerá el ultimo valor de la lista (listab)
 print(listae)
 
 listaf = [1, 2, 3]
