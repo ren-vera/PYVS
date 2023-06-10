@@ -1,4 +1,13 @@
 menu_principal = True
+tipo_car = 0
+patente_car = 0
+marca_car = 0
+valor_car = 0
+multa_car = 0
+fecha_multa_car = 0
+fecha_registro_car = 0
+dueño_car = 0
+
 
 print("------ Bienvenido a AutoSeguro ------")
 while  menu_principal :
@@ -21,18 +30,24 @@ while  menu_principal :
         
             if consulta == "SI" or consulta =="si":
                 multa_car = int(input("\nIngrese el monto de la multa: $"))
-                fecha_multa_car = input("\nFecha de la multa (si/no): ")
+                fecha_multa_car = input("\nFecha de la multa: ")
         
             elif consulta == "NO" or consulta =="no":
                 print("")
         
             fecha_registro_car = input("\nFecha del registro del vehiculo: ")
             dueño_car = input("\nDueño del vehiculo: ")  
-            menu_principal = False     
+            lista = tipo_car, patente_car, marca_car, valor_car, multa_car, fecha_multa_car, fecha_registro_car, dueño_car
+            print("Los datos ingredos son los siguientes: ", lista)
+
         
         elif opcion == 2 :
             print("\n Ha seleccionado la opción: Buscar")
-            break           
+            search_patente = input("INGRESE PATENTE: ")   
+            if search_patente == patente_car:
+                print(lista)
+            else:
+                print("Esa patente no existe, no sea wn")
 
         elif opcion == 3 :
             print("\n Ha seleccionado la opción: Imprimir certificados")
@@ -44,13 +59,9 @@ while  menu_principal :
 
         else:
             print("\nSelección invalida, Intente denuevo.")
-            menu_principal = False
-
+            
     except ValueError:
         print("\nPor favor ingrese números enteros")
-
-
-
 
 
 
