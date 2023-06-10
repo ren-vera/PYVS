@@ -7,7 +7,7 @@ multa_car = 0
 fecha_multa_car = 0
 fecha_registro_car = 0
 dueño_car = 0
-
+import random
 
 print("------ Bienvenido a AutoSeguro ------")
 while  menu_principal :
@@ -25,7 +25,12 @@ while  menu_principal :
             tipo_car = input("\nTIPO DE VEHICULO: ")
             patente_car = input("\nPATENTE DEL VEHICULO: ")
             marca_car = input("\nMARCA DEL VEHICULO: ")
-            valor_car = int(input("\nPRECIO DEL VEHICULO: $"))
+            precio_Car = int(input("\nPRECIO DEL VEHICULO: $"))
+            if precio_Car >= 5000000:
+                valor_car = precio_Car
+            else: 
+                print("El precio no es mayor a 5.000.000")
+
             consulta = input("\n¿El vehiculo tiene multas?: ")
         
             if consulta == "SI" or consulta =="si":
@@ -39,7 +44,7 @@ while  menu_principal :
             dueño_car = input("\nDueño del vehiculo: ")  
             lista = tipo_car, patente_car, marca_car, valor_car, multa_car, fecha_multa_car, fecha_registro_car, dueño_car
             print("Los datos ingredos son los siguientes: ", lista)
-
+        #//////////////////////////////////////////////////////////////////////////
         
         elif opcion == 2 :
             print("\n Ha seleccionado la opción: Buscar")
@@ -48,15 +53,24 @@ while  menu_principal :
                 print(lista)
             else:
                 print("Esa patente no existe, no sea wn")
-
+            break
+        
+        #////////////////////////////////////////////////////////////////////////
         elif opcion == 3 :
             print("\n Ha seleccionado la opción: Imprimir certificados")
-            break
-
+            for i in range(1):
+                valor_random_1 = random.randint(1500,3500)
+                valor_random_2 = random.randint(1500,3500)
+                valor_random_3 = random.randint(1500,3500)
+                print("El valor de los certificados de emision de contaminantes tiene un costo de: $", valor_random_1)
+                print("El valor de los ceritificados de anotaciones vigentes, tiene un costo de: $", valor_random_2)
+                print("El valor de los certificados de multas, tiene un costo de : $",valor_random_3)
+            menu_principal = False
+        #//////////////////////////////////////////////////////////////////////////
         elif opcion == 4 :
             print("\n Ha seleccionado la opción: Salir \n¡Vuelva Pronto!")
             break
-
+        #////////////////////////////////////////////////////////////////////////////
         else:
             print("\nSelección invalida, Intente denuevo.")
             

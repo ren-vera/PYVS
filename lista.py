@@ -47,9 +47,9 @@ lista_original = [1, 2, 3, 4, 5]
 copia = lista_original.copy() #copia la lista
 print(copia)
 
-listai = ([1, 2, 3, 4, 5], "aa")
-lista.clear() #borra la lista
-print(lista)
+listai = ([1, 2, 3, 4, 5])
+listai.clear() #borra la lista
+print(listai)
 
 lista = [1, 2, 3, 4, 2, 2, 5]
 contador = lista.count(2) #se utiliza para contar el número de apariciones de un elemento en una lista.
