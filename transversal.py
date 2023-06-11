@@ -26,7 +26,7 @@ while  menu_principal :
             patente_car = input("\nPATENTE DEL VEHICULO: ")
             marca_car = input("\nMARCA DEL VEHICULO: ")
             precio_Car = int(input("\nPRECIO DEL VEHICULO: $"))
-            if precio_Car > 5000000:
+            if precio_Car >= 5000000:
                 print("")
             else: 
                 print("El precio no es mayor a 5.000.000")
@@ -66,9 +66,9 @@ while  menu_principal :
                 valor_random_1 = random.randint(1500,3500)
                 valor_random_2 = random.randint(1500,3500)
                 valor_random_3 = random.randint(1500,3500)
-                print("El valor de los certificados de emision de contaminantes tiene un costo de: $", valor_random_1)
-                print("El valor de los ceritificados de anotaciones vigentes, tiene un costo de: $", valor_random_2)
-                print("El valor de los certificados de multas, tiene un costo de : $",valor_random_3)
+                print("El valor de los certificados de emision de contaminantes tiene un costo de: $", valor_random_1,"Patente",patente_car,"Dueño vehiculo: ", dueño_car)
+                print("El valor de los ceritificados de anotaciones vigentes, tiene un costo de: $", valor_random_2,"Patente",patente_car,"Dueño vehiculo: ", dueño_car)
+                print("El valor de los certificados de multas, tiene un costo de : $",valor_random_3,"Patente: ",patente_car,"Dueño vehiculo: ", dueño_car)
 
         #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         elif opcion == 4 :
@@ -80,3 +80,11 @@ while  menu_principal :
             
     except ValueError:
         print("\nPor favor ingrese números enteros")
+
+
+
+
+
+
+
+        
