@@ -1,12 +1,12 @@
 menu_principal = True
-tipo_car = 0
-patente_car = 0
-marca_car = 0
-valor_car = 0
-multa_car = 0
-fecha_multa_car = 0
-fecha_registro_car = 0
-dueño_car = 0
+precio_Car = 0
+f_gravisima_monto = 0
+f_grave_monto = 0
+f_menos_grave_monto = 0
+f_leve_monto = 0
+fecha_ultima_multa = 0
+
+
 import random
 
 print("------ Bienvenido a AutoSeguro ------")
@@ -26,8 +26,8 @@ while  menu_principal :
             patente_car = input("\nPATENTE DEL VEHICULO: ")
             marca_car = input("\nMARCA DEL VEHICULO: ")
             precio_Car = int(input("\nPRECIO DEL VEHICULO: $"))
-            if precio_Car >= 5000000:
-                valor_car = precio_Car
+            if precio_Car > 5000000:
+                print("")
             else: 
                 print("El precio no es mayor a 5.000.000")
             
@@ -50,16 +50,16 @@ while  menu_principal :
             dueño_car = input("\nDueño del vehiculo: ")  
             print("")
             print("\nLos datos ingresados son los siguientes: ","\nTipo de auto: ",tipo_car,"\nPatente del vehiculo: ",patente_car,"\nMarca del vehiculo: ",marca_car,"\nValor del vehiculo: ",precio_Car,"\nMonto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto,"\nFecha de la multa más reciente: ",fecha_ultima_multa,"\nFecha del registro: ",fecha_registro_car,"\nDueño del vehiculo:",dueño_car)
-        #//////////////////////////////////////////////////////////////////////////
+        #//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         elif opcion == 2 :
             print("\n Ha seleccionado la opción: Buscar")
             buscar_patente = input("INGRESE PATENTE: ")   
             print("")
             if buscar_patente == patente_car:
-                print("\nLos datos registrados son los siguientes: ","\nTipo de auto: ",tipo_car,"\nPatente del vehiculo: ",patente_car,"\nMarca del vehiculo: ",marca_car,"\nValor del vehiculo: ","\nMonto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto,"\nFecha de la multa más reciente: ",fecha_ultima_multa,"\nFecha del registro: ",fecha_registro_car,"\nDueño del vehiculo:",dueño_car)
+                print("\nLos datos registrados son los siguientes: ","\nTipo de auto: ",tipo_car,"\nPatente del vehiculo: ",patente_car,"\nMarca del vehiculo: ",marca_car,"\nValor del vehiculo: ",precio_Car,"\nMonto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto,"\nFecha de la multa más reciente: ",fecha_ultima_multa,"\nFecha del registro: ",fecha_registro_car,"\nDueño del vehiculo:",dueño_car)
             else:
                 print("Esa patente no esta registrada.")
-        #////////////////////////////////////////////////////////////////////////////
+        ##//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         elif opcion == 3 :
             print("\n Ha seleccionado la opción: Imprimir certificados")
             for i in range(1):
@@ -69,12 +69,12 @@ while  menu_principal :
                 print("El valor de los certificados de emision de contaminantes tiene un costo de: $", valor_random_1)
                 print("El valor de los ceritificados de anotaciones vigentes, tiene un costo de: $", valor_random_2)
                 print("El valor de los certificados de multas, tiene un costo de : $",valor_random_3)
-            menu_principal = False
-        #//////////////////////////////////////////////////////////////////////////
+
+        #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         elif opcion == 4 :
-            print("\n Ha seleccionado la opción: Salir \n¡Vuelva Pronto!\nRENATO VERA TECH 1.7")
+            print("\nHa seleccionado la opción: Salir \n¡Vuelva Pronto!\nRENATO VERA TECH 1.7")
             break
-        #////////////////////////////////////////////////////////////////////////////
+        #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         else:
             print("\nSelección invalida, Intente denuevo.")
             
