@@ -45,7 +45,7 @@ while  menu_principal :
                 print("Monto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto)
             else:
                 print("")
-
+            
             fecha_registro_car = input("\nFecha del registro del vehiculo: ")
             dueño_car = input("\nDueño del vehiculo: ")  
             print("")
