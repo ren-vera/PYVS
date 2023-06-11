@@ -37,22 +37,22 @@ while  menu_principal :
                 multa_car = int(input("\nIngrese el monto de la multa: $"))
                 fecha_multa_car = input("\nFecha de la multa: ")
         
-            elif consulta == "NO" or consulta =="no":
+            else:
                 print("")
         
             fecha_registro_car = input("\nFecha del registro del vehiculo: ")
             dueño_car = input("\nDueño del vehiculo: ")  
-            lista = tipo_car, patente_car, marca_car, valor_car, multa_car, fecha_multa_car, fecha_registro_car, dueño_car
-            print("Los datos ingredos son los siguientes: ", lista)
+            lista = "Tipo de auto: ",tipo_car,"Patente del vehiculo: ",patente_car,"Marca del vehiculo: ",marca_car,"Valor del vehiculo: ",valor_car, multa_car, fecha_multa_car,"Fecha del registro: ",fecha_registro_car,"Dueño del vehiculo:",dueño_car
+            print("Los datos ingresados son los siguientes: ",)
         #//////////////////////////////////////////////////////////////////////////
         
         elif opcion == 2 :
             print("\n Ha seleccionado la opción: Buscar")
-            search_patente = input("INGRESE PATENTE: ")   
-            if search_patente == patente_car:
+            buscar_patente = input("INGRESE PATENTE: ")   
+            if buscar_patente == patente_car:
                 print(lista)
             else:
-                print("Esa patente no existe, no sea wn")
+                print("Esa patente no esta registrada ")
             
         
         #////////////////////////////////////////////////////////////////////////
