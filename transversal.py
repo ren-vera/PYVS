@@ -53,7 +53,7 @@ while  menu_principal :
                 print(lista)
             else:
                 print("Esa patente no existe, no sea wn")
-            break
+            
         
         #////////////////////////////////////////////////////////////////////////
         elif opcion == 3 :
@@ -76,59 +76,3 @@ while  menu_principal :
             
     except ValueError:
         print("\nPor favor ingrese números enteros")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
