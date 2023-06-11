@@ -30,32 +30,36 @@ while  menu_principal :
                 valor_car = precio_Car
             else: 
                 print("El precio no es mayor a 5.000.000")
-
-            consulta = input("\n¿El vehiculo tiene multas?: ")
-        
-            if consulta == "SI" or consulta =="si":
-                multa_car = int(input("\nIngrese el monto de la multa: $"))
-                fecha_multa_car = input("\nFecha de la multa: ")
-        
+            
+            consulta = input("Tiene multas?: ")
+            if consulta == "SI" or consulta == "si":
+                falta_gravisima = int(input("Cantidad de Faltas Gravisimas (1,5 a 3 UTM): "))
+                falta_grave = int(input("Cantidad de Faltas Graves (1 a 1,5 UTM): "))
+                falta_menos_grave = int(input("Cantidad de faltas Menos Graves( 0,5 a 1 UTM): "))
+                falta_leve = int(input("Cantidad de faltas leves (0,2 a 0,5 UTM): "))
+                f_gravisima_monto = 126526 * falta_gravisima
+                f_grave_monto = 75915 * falta_grave
+                f_menos_grave_monto = 50610 * falta_menos_grave 
+                f_leve_monto = 25305 * falta_leve 
+                fecha_ultima_multa = input("Ingrese la fecha de la multa más reciente: ")
+                print("Monto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto)
             else:
                 print("")
-        
+
             fecha_registro_car = input("\nFecha del registro del vehiculo: ")
             dueño_car = input("\nDueño del vehiculo: ")  
-            lista = "Tipo de auto: ",tipo_car,"Patente del vehiculo: ",patente_car,"Marca del vehiculo: ",marca_car,"Valor del vehiculo: ",valor_car, multa_car, fecha_multa_car,"Fecha del registro: ",fecha_registro_car,"Dueño del vehiculo:",dueño_car
-            print("Los datos ingresados son los siguientes: ",)
+            print("")
+            print("\nLos datos ingresados son los siguientes: ","\nTipo de auto: ",tipo_car,"\nPatente del vehiculo: ",patente_car,"\nMarca del vehiculo: ",marca_car,"\nValor del vehiculo: ",precio_Car,"\nMonto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto,"\nFecha de la multa más reciente: ",fecha_ultima_multa,"\nFecha del registro: ",fecha_registro_car,"\nDueño del vehiculo:",dueño_car)
         #//////////////////////////////////////////////////////////////////////////
-        
         elif opcion == 2 :
             print("\n Ha seleccionado la opción: Buscar")
             buscar_patente = input("INGRESE PATENTE: ")   
+            print("")
             if buscar_patente == patente_car:
-                print(lista)
+                print("\nLos datos registrados son los siguientes: ","\nTipo de auto: ",tipo_car,"\nPatente del vehiculo: ",patente_car,"\nMarca del vehiculo: ",marca_car,"\nValor del vehiculo: ","\nMonto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto,"\nFecha de la multa más reciente: ",fecha_ultima_multa,"\nFecha del registro: ",fecha_registro_car,"\nDueño del vehiculo:",dueño_car)
             else:
-                print("Esa patente no esta registrada ")
-            
-        
-        #////////////////////////////////////////////////////////////////////////
+                print("Esa patente no esta registrada.")
+        #////////////////////////////////////////////////////////////////////////////
         elif opcion == 3 :
             print("\n Ha seleccionado la opción: Imprimir certificados")
             for i in range(1):
@@ -68,7 +72,7 @@ while  menu_principal :
             menu_principal = False
         #//////////////////////////////////////////////////////////////////////////
         elif opcion == 4 :
-            print("\n Ha seleccionado la opción: Salir \n¡Vuelva Pronto!")
+            print("\n Ha seleccionado la opción: Salir \n¡Vuelva Pronto!\nRENATO VERA TECH 1.7")
             break
         #////////////////////////////////////////////////////////////////////////////
         else:
