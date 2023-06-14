@@ -1,5 +1,5 @@
 menu_principal = True
-precio_Car = 0
+precio_car = 0
 f_gravisima_monto = 0
 f_grave_monto = 0
 f_menos_grave_monto = 0

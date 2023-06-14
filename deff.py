@@ -63,7 +63,50 @@ print("El monto final a pagar es: ",calculo(* datos))
 #///////////////////////////////////////////////////////////////////////////////
 def saludo(nombre, mensaje = 'Python'):
     print(mensaje, nombre)
-saludo(mensaje="buendía", nombre="Renato")
+saludo(mensaje="Buen Día", nombre="Renato")
+
+
+def resta(a, b):
+    return a - b
+resta(30, 10)
+
+
+def resta(a, b):
+    return a - b
+resta(b = 30, a = 10)
+
+
+def funcion():
+    return "bienvenidos a python ☺"
+frase = funcion()
+print(frase)
+
+
+def resta (a=None, b=None):
+    if a  == None or b == None:
+        print("Error, faltan parámetros a la funcione")
+        return
+    return a - b
+resta()
+
+
+def calculo(precio, descuento):
+    return precio - (precio * descuento / 100)
+
+datos = [10000, 10]
+print("El monto final a pagar es: ",calculo(*datos))
+
+
+def saludo(nombre, mensaje='Python'):
+    print(mensaje, nombre)
+
+saludo(mensaje="Buen día", nombre = "Pedro")
+
+
+
+
+
+
 
 
 
