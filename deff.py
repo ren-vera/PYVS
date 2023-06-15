@@ -1,14 +1,14 @@
-def saludo():
+def saludo(): #SIN ARGUMENTO Y SIN RETORNO
     print("HOLA A TODOS HIJOS DE LA GRANDISIMA")
 saludo()
 #///////////////////////////////////////////////////////////////////////////
-def sumar():
+def sumar():#SIN ARGUMENTO Y CON RETORNO
     num1 = 3
     num2 = 5
     return(num1 + num2)
 print("La suma es: ", sumar())
 #///////////////////////////////////////////////////////////////////////////
-def sumar(a, b):
+def sumar(a, b):#CON ARGUMENTO Y SIN RETORNO
     suma = a + b
     print(f"La suma de los argumentos es: {suma}")
 
@@ -17,7 +17,7 @@ num12 = int(input("Ingrese el segundo número: "))
 sumar(num11, num12)
 
 #////////////////////////////////////////////////////////////////////////////
-def sumar(a, b):
+def sumar(a, b):#CON ARGUMENTO Y CON RETORNO
     suma = a + b
     return(suma)
 
@@ -65,23 +65,23 @@ def saludo(nombre, mensaje = 'Python'):
     print(mensaje, nombre)
 saludo(mensaje="Buen Día", nombre="Renato")
 
-
+#///////////////////////////////////////////////////////////////////////////////////////
 def resta(a, b):
     return a - b
 resta(30, 10)
-
-
+print(resta)
+#/////////////////////////////////////////////////////////////////////////////////////////////
 def resta(a, b):
     return a - b
 resta(b = 30, a = 10)
-
-
+print(resta)
+#///////////////////////////////////////////////////////////////////////////////////////////////////
 def funcion():
     return "bienvenidos a python ☺"
 frase = funcion()
 print(frase)
 
-
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////
 def resta (a=None, b=None):
     if a  == None or b == None:
         print("Error, faltan parámetros a la funcione")
@@ -89,18 +89,19 @@ def resta (a=None, b=None):
     return a - b
 resta()
 
-
+#///////////////////////////////////////////////////////////////////////////////////////////////////////
 def calculo(precio, descuento):
     return precio - (precio * descuento / 100)
 
 datos = [10000, 10]
 print("El monto final a pagar es: ",calculo(*datos))
 
-
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 def saludo(nombre, mensaje='Python'):
     print(mensaje, nombre)
 
 saludo(mensaje="Buen día", nombre = "Pedro")
+
 
 
 
