@@ -1,3 +1,9 @@
+def calcular_iva(numro1:int):
+    return numro1 * 0.19
+
+
+
+
 menu = True
 try:
     while menu:
@@ -7,7 +13,10 @@ try:
             print("2. Restar")
             print("3. Multiplicar")
             print("4. Dividir")
-            print("5. Salir")
+            print("5. Calcular IVA")
+            print("6. Calcular Descuento % ")
+            print("7. Calcular IMC")
+            print("8. SALIR ")
             
             opcion = int(input("\nSeleccione una opción: "))
             #/////////////////////////////////////////////////////////////////////////
@@ -45,9 +54,35 @@ try:
                     return(dividir)
                 num111 = int(input("\nIngrese el primer número: "))
                 num222 = int(input("\nIngrese el segundo número: "))
-                print(f"El resultado de la divisió es: ", division(num111, num222))
+                print(f"El resultado de la división es: ", division(num111, num222))
             #//////////////////////////////////////////////////////////////////////////////////
+            
             elif opcion == 5:
+                print("Ha seleccionado Calcular IVA")
+                producto = int(input("Ingrese un valor: "))
+                print("El valor es: ",calcular_iva(producto))
+
+            #//////////////////////////////////////////////////////////////////////////////////
+            elif opcion == 6:
+                print("\nHa seleccionado Calcular Descuento")
+                def calculo_desc(precio):
+                    calcular_desc = precio * 0.30  # Calcula el monto del descuento
+                    return calcular_desc
+                precio = float(input("Ingrese el precio: "))  
+                descuento = calculo_desc(precio)
+                monto_final = precio - descuento  # Calcula el monto final a pagar
+                print(f"El monto final a pagar es: {monto_final}")
+            #//////////////////////////////////////////////////////////////////////////////////////////////
+            elif opcion == 7:
+                print("Ha seleccionado Calcular IMC")
+            
+            
+            
+            
+            
+            
+            #////////////////////////////////////////////////////////////////////////////////////////////////
+            elif opcion == 8:
                 print("Ha seleccionado la opción Salir")
                 print("Vuelva pronto...")
                 menu = False
