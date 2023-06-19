@@ -1,7 +1,8 @@
+from intento1 import * #IF == 7 CALCULAR IMC
+
 def calcular_iva(numro1:int):
-    return numro1 * 0.19
-
-
+    return numro1 * 0.19 # if opcion == 5
+#//////////////////////////////////////////////////////////
 
 
 menu = True
@@ -50,7 +51,7 @@ try:
             elif opcion == 4:
                 print("\nHa seleccionado la opción Dividir")
                 def division(a, b):
-                    dividir = a // b
+                    dividir = a / b
                     return(dividir)
                 num111 = int(input("\nIngrese el primer número: "))
                 num222 = int(input("\nIngrese el segundo número: "))
@@ -75,12 +76,8 @@ try:
             #//////////////////////////////////////////////////////////////////////////////////////////////
             elif opcion == 7:
                 print("Ha seleccionado Calcular IMC")
-            
-            
-            
-            
-            
-            
+                print(calcular_IMC(89,1.92))
+                menu = False
             #////////////////////////////////////////////////////////////////////////////////////////////////
             elif opcion == 8:
                 print("Ha seleccionado la opción Salir")
