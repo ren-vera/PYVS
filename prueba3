@@ -1,0 +1,92 @@
+import random
+from hoja_funciones import *
+menu = True
+
+
+
+
+def buscar_reservas_por_numero(numero):
+    encontradas = [reserva for reserva in num_reservas if reserva == numero]
+    if encontradas:
+        print(f"Reservas encontradas para el número {numero}:")
+        for reserva in encontradas:
+            print(reserva)
+    else:
+        print(f"No se encontraron reservas para el número {numero}.")
+
+def mostrar_reservas():
+    if num_reservas:
+        print("Reservas ingresadas:")
+        for reserva in num_reservas:
+            print(reserva)
+    else:
+        print("No se han ingresado reservas.")
+
+
+
+
+
+print("=====Bienvenidos a Te Paseo=====")
+while menu:
+    print("\n=== Menú Principal ===")
+    print("\n1.- Grabar")
+    print("\n2.- Buscar")
+    print("\n3.- Imprimir Boleta")
+    print("\n4.- Salir")
+    
+    opcion = int(input("\nIngrese una opción: "))
+
+    if opcion == 1:
+        print("\nHa seleccionado: Grabar")
+        
+        numero = input("\nIngrese la fecha del paseo: ")
+        ingresar_fecha_paseo(numero)
+        
+        hora = input("\nIngrese hora del paseo: ")
+        ingresar_hr_paseo(hora)
+        
+        lugar_ini = input("\nIngrese lugar para iniciar el paseo: ")
+        inicio_paseo(lugar_ini)
+        
+        lugar_fin = input("\nIngrese lugar para finalizar el paseo: ")
+        fin_paseo(lugar_fin)
+        
+        numero_mascotas = int(input("\nIngrese la cantidad de mascotas a pasear: "))
+        if numero_mascotas < 1 or numero_mascotas > 5:
+            print("\nNo se puede pasear esa cantidad de mascotas")
+            cant_masc.append
+        else:
+            print("")
+        
+        nomb_dueño = input("\nIngrese nombre del dueño: ")
+        nombre_cliente(nomb_dueño)
+        
+        def reserva(numer_reservas):
+            numero_reserva = random.randint(1000,10000)
+            num_reservas.append(numer_reservas)
+            print("su número de reserva es: ",numero_reserva)
+
+
+
+
+
+    if opcion == 2:
+        print("Ha seleccionado: Buscar")
+        numero = input("Ingrese el número de reserva a buscar: ")
+        buscar_reservas_por_numero(numero)
+
+
+    if opcion == 3:
+        print("Ha seleccionado: Imprimir Boleta")    
+
+    if opcion == 4:
+        print("Ha seleccionado: Salir")
+
+    #else:
+    #   print("Opcion Invalida")
+
+
+
+
+
+
