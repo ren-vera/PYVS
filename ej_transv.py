@@ -10,7 +10,7 @@ def grabar_vehiculo():
     precio = float(input("Precio: "))
     multas = []
     fecha_registro = input("Fecha de registro: ")
-    nombre_dueño = input("Nombre del dueño: ")
+    nombre_dueño = input("Dueño del Vehiculo: ")
     
     while len(patente) != 6 or not patente.isalnum():
         print("La patente debe tener 6 caracteres alfanuméricos.")
@@ -31,14 +31,14 @@ def grabar_vehiculo():
         "Precio": precio,
         "Multas": multas,
         "Fecha de Registro": fecha_registro,
-        "Nombre del Dueño": nombre_dueño
+        "Dueño del Vehiculo": nombre_dueño
     }
     
     vehiculos.append(vehiculo)
     print("El vehículo se ha registrado exitosamente.")
 
 def buscar_vehiculo():
-    patente = input("Ingrese la patente del vehículo a buscar: ")
+    patente = input("Favor ingresar la patente del vehículo a buscar: ")
     encontrado = False
     
     for vehiculo in vehiculos:
@@ -67,7 +67,6 @@ def imprimir_certificados():
             print()
 
 def mostrar_menu():
-    print("Bienvenido a la automotora Auto Seguro")
     print("Menú:")
     print("1. Grabar vehículo")
     print("2. Buscar vehículo")
@@ -76,9 +75,10 @@ def mostrar_menu():
     print()
 
 def programa_automotora():
+    print("Bienvenido a Auto Seguro")
     while True:
         mostrar_menu()
-        opcion = input("Ingrese la opción deseada (1-4): ")
+        opcion = input("Ingrese una opción: ")
         
         if opcion == "1":
             grabar_vehiculo()
@@ -87,7 +87,7 @@ def programa_automotora():
         elif opcion == "3":
             imprimir_certificados()
         elif opcion == "4":
-            print("Gracias por utilizar el programa. ¡Hasta luego!")
+            print("Gracias por utilizar el programa (RENATO.VERA_3.1). ¡Hasta luego!")
             break
         else:
             print("Opción inválida. Por favor, ingrese una opción válida.")
