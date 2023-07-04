@@ -1,6 +1,3 @@
-def sumar():
-    a + b = c
-
-
-
-print("calculadora")
+x = float(input())
+y = float(input())
+print( y ** (1/x))

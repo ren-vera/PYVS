@@ -1,90 +1,96 @@
-menu_principal = True
-precio_car = 0
-f_gravisima_monto = 0
-f_grave_monto = 0
-f_menos_grave_monto = 0
-f_leve_monto = 0
-fecha_ultima_multa = 0
-
-
 import random
 
-print("------ Bienvenido a AutoSeguro ------")
-while  menu_principal :
-    try:
-        print("")
-        print("1.- Grabar")
-        print("2.- Buscar")
-        print("3.- Imprimir certificados")
-        print("4.- Salir")
-        opcion = int(input("\nPor favor seleccione una opción: "))
+vehiculos = []
 
-        if opcion == 1 :
-            print("\n Ha seleccionado la opción: Grabar")
-            print("\nPor favor rellene el siguiente formulario: ")
-            tipo_car = input("\nTIPO DE VEHICULO: ")
-            patente_car = input("\nPATENTE DEL VEHICULO: ")
-            marca_car = input("\nMARCA DEL VEHICULO: ")
-            precio_Car = int(input("\nPRECIO DEL VEHICULO: $"))
-            if precio_Car >= 5000000:
-                print("")
-            else: 
-                print("El precio no es mayor a 5.000.000")
-            
-            consulta = input("Tiene multas?: ")
-            if consulta == "SI" or consulta == "si":
-                falta_gravisima = int(input("Cantidad de Faltas Gravisimas (1,5 a 3 UTM): "))
-                falta_grave = int(input("Cantidad de Faltas Graves (1 a 1,5 UTM): "))
-                falta_menos_grave = int(input("Cantidad de faltas Menos Graves( 0,5 a 1 UTM): "))
-                falta_leve = int(input("Cantidad de faltas leves (0,2 a 0,5 UTM): "))
-                f_gravisima_monto = 126526 * falta_gravisima
-                f_grave_monto = 75915 * falta_grave
-                f_menos_grave_monto = 50610 * falta_menos_grave 
-                f_leve_monto = 25305 * falta_leve 
-                fecha_ultima_multa = input("Ingrese la fecha de la multa más reciente: ")
-                print("Monto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto)
-            else:
-                print("")
-            
-            fecha_registro_car = input("\nFecha del registro del vehiculo: ")
-            dueño_car = input("\nDueño del vehiculo: ")  
-            print("")
-            print("\nLos datos ingresados son los siguientes: ","\nTipo de auto: ",tipo_car,"\nPatente del vehiculo: ",patente_car,"\nMarca del vehiculo: ",marca_car,"\nValor del vehiculo: ",precio_Car,"\nMonto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto,"\nFecha de la multa más reciente: ",fecha_ultima_multa,"\nFecha del registro: ",fecha_registro_car,"\nDueño del vehiculo:",dueño_car)
-        #//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        elif opcion == 2 :
-            print("\n Ha seleccionado la opción: Buscar")
-            buscar_patente = input("INGRESE PATENTE: ")   
-            print("")
-            if buscar_patente == patente_car:
-                print("\nLos datos registrados son los siguientes: ","\nTipo de auto: ",tipo_car,"\nPatente del vehiculo: ",patente_car,"\nMarca del vehiculo: ",marca_car,"\nValor del vehiculo: ",precio_Car,"\nMonto aproximado por Faltas Gravisimas: $",f_gravisima_monto,"\nMonto aproximado por Faltas Graves: $",f_grave_monto,"\nMonto aproximado por Faltas Menos Graves: $",f_menos_grave_monto,"\n" "Monto aproximado por Faltas Leves: $",f_leve_monto,"\nFecha de la multa más reciente: ",fecha_ultima_multa,"\nFecha del registro: ",fecha_registro_car,"\nDueño del vehiculo:",dueño_car)
-            else:
-                print("Esa patente no esta registrada.")
-        ##//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        elif opcion == 3 :
-            print("\n Ha seleccionado la opción: Imprimir certificados")
-            for i in range(1):
-                valor_random_1 = random.randint(1500,3500)
-                valor_random_2 = random.randint(1500,3500)
-                valor_random_3 = random.randint(1500,3500)
-                print("El valor de los certificados de emision de contaminantes tiene un costo de: $", valor_random_1,"Patente",patente_car,"Dueño vehiculo: ", dueño_car)
-                print("El valor de los ceritificados de anotaciones vigentes, tiene un costo de: $", valor_random_2,"Patente",patente_car,"Dueño vehiculo: ", dueño_car)
-                print("El valor de los certificados de multas, tiene un costo de : $",valor_random_3,"Patente: ",patente_car,"Dueño vehiculo: ", dueño_car)
+def grabar_vehiculo():
+    print("Ingrese los datos del vehículo:")
+    tipo = input("Tipo: ")
+    patente = input("Patente: ")
+    marca = input("Marca: ")
+    precio = float(input("Precio: "))
+    multas = []
+    fecha_registro = input("Fecha de registro: ")
+    nombre_dueño = input("Nombre del dueño: ")
+    
+    while len(patente) != 6 or not patente.isalnum():
+        print("La patente debe tener 6 caracteres alfanuméricos.")
+        patente = input("Patente: ")
+    
+    while len(marca) < 2 or len(marca) > 15:
+        print("La marca debe tener entre 2 y 15 caracteres.")
+        marca = input("Marca: ")
+    
+    while precio <= 5000000:
+        print("El precio debe ser mayor a $5.000.000.")
+        precio = float(input("Precio: "))
+    
+    vehiculo = {
+        "Tipo": tipo,
+        "Patente": patente,
+        "Marca": marca,
+        "Precio": precio,
+        "Multas": multas,
+        "Fecha de Registro": fecha_registro,
+        "Nombre del Dueño": nombre_dueño
+    }
+    
+    vehiculos.append(vehiculo)
+    print("El vehículo se ha registrado exitosamente.")
 
-        #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        elif opcion == 4 :
-            print("\nHa seleccionado la opción: Salir \n¡Vuelva Pronto!\nRENATO VERA TECH 1.7")
+def buscar_vehiculo():
+    patente = input("Ingrese la patente del vehículo a buscar: ")
+    encontrado = False
+    
+    for vehiculo in vehiculos:
+        if vehiculo["Patente"] == patente:
+            print("Información del vehículo:")
+            for key, value in vehiculo.items():
+                print(key + ": " + str(value))
+            encontrado = True
             break
-        #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        else:
-            print("\nSelección invalida, Intente denuevo.")
-            
-    except ValueError:
-        print("\nPor favor ingrese números enteros")
+    
+    if not encontrado:
+        print("No se encontró ningún vehículo con esa patente.")
 
-
-
-
-
-
-
+def imprimir_certificados():
+    certificados = ["Emisión de contaminantes", "Anotaciones vigentes", "Multas"]
+    
+    for vehiculo in vehiculos:
+        print("Datos del dueño:")
+        print("Nombre: " + vehiculo["Nombre del Dueño"])
+        print("Patente del auto: " + vehiculo["Patente"])
         
+        for certificado in certificados:
+            monto = random.randint(1500, 3500)
+            print("Certificado: " + certificado)
+            print("Monto: $" + str(monto))
+            print()
+
+def mostrar_menu():
+    print("Bienvenido a la automotora Auto Seguro")
+    print("Menú:")
+    print("1. Grabar vehículo")
+    print("2. Buscar vehículo")
+    print("3. Imprimir certificados")
+    print("4. Salir")
+    print()
+
+def programa_automotora():
+    while True:
+        mostrar_menu()
+        opcion = input("Ingrese la opción deseada (1-4): ")
+        
+        if opcion == "1":
+            grabar_vehiculo()
+        elif opcion == "2":
+            buscar_vehiculo()
+        elif opcion == "3":
+            imprimir_certificados()
+        elif opcion == "4":
+            print("Gracias por utilizar el programa. ¡Hasta luego!")
+            break
+        else:
+            print("Opción inválida. Por favor, ingrese una opción válida.")
+        print()
+programa_automotora()
+
