@@ -56,7 +56,7 @@ base_de_datos = {
 
 
 def grabar_producto():
-    global producto
+    global base_de_datos
     print("---> Ingrese especificaciones <---")
     num_prod = int(input("Número de producto: "))
     nombre_prod = input("Nombre del producto: ")
@@ -70,7 +70,7 @@ def grabar_producto():
     
     if len(nombre_prod) >= 6:
         if precio_prod >= 500:
-            producto.append(producto_s)
+            base_de_datos[num_prod] = producto_s  # Actualizar la base de datos
             print("\nEl producto ha sido ingresado")
         else:
             print("No hay stock")
@@ -78,25 +78,16 @@ def grabar_producto():
         print("☻ El nombre debe ser más específico ☻")
 
 def buscar_prod():
-    global producto, base_de_datos
+    global base_de_datos
     num_prod = int(input("\nIngrese el número de producto: "))
-    encontrado = False
-    
+
     if num_prod in base_de_datos:
         producto_s = base_de_datos[num_prod]
         for key, value in producto_s.items():
             print(key + ": " + str(value))
-        encontrado = True
-
-    for producto_s in producto:
-        if producto_s["Número de producto"] == num_prod:
-            for key, value in producto_s.items():
-                print(key + ": " + str(value))
-            encontrado = True
-            break
-
-    if not encontrado:
+    else:
         print("\nNo se encontró ningún producto con este número")
+
 
 def imprimir_productos():
     global producto
@@ -105,6 +96,7 @@ def imprimir_productos():
         for key, value in producto_s.items():
             print(key + ": " + str(value))
         print()
+        
 
 def mostrar_menu():
     print("--- Benvenuto nel menu ---")    
